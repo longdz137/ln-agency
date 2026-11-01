@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  @apply bg-ink text-paper font-body antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(214, 179, 106, 0.35);
+  color: #fff;
+}
+
+*:focus-visible {
+  outline: 2px solid #d6b36a;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #f7e9c4 0%, #d6b36a 50%, #a8893f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-glow {
+  position: relative;
+}
+
+.card-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(214,179,106,0.4), transparent 40%, transparent 60%, rgba(214,179,106,0.2));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #08090C; }
+::-webkit-scrollbar-thumb {
+  background: #1c1f26;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover { background: #D6B36A; }
